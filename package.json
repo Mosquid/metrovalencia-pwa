@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "routes:build": "node scripts/build-routes.mjs"
+    "routes:build": "node scripts/build-routes.mjs",
+    "stations:build": "node scripts/build-stations.mjs"
   },
   "dependencies": {
     "cheerio": "1.1.2",

@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { normalizeName } from "@/lib/normalize";
+import { NearbyStation } from "./nearby-station";
 
 type Departure = {
   id: string;
@@ -220,6 +221,8 @@ export function DeparturesApp({ initialStation }: { initialStation: string }) {
         )}
       </section>
 
+      {stationName && <NearbyStation stationName={stationName} />}
+
       {state.kind === "loading" && (
         <section className="loading-state" aria-label="Loading departures" aria-busy="true">
           <div className="skeleton skeleton-heading" />
@@ -308,6 +311,7 @@ export function DeparturesApp({ initialStation }: { initialStation: string }) {
 
       <footer>
         <p>Times are supplied by Metrovalencia and may be scheduled rather than live predictions.</p>
+        <p>Station locations: <a href="https://opendata.vlci.valencia.es/dataset/fgv-estacions-estaciones" target="_blank" rel="noreferrer">Ajuntament de València</a> (CC BY 4.0)</p>
         <p>Route data: <a href="https://www.transportes.gob.es/" target="_blank" rel="noreferrer">Powered by MITRAMS</a></p>
       </footer>
     </main>
