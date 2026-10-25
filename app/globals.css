@@ -23,6 +23,7 @@ html {
 
 body {
   margin: 0;
+  border-top: 5px solid var(--accent);
   min-height: 100vh;
   min-height: 100dvh;
   background:
